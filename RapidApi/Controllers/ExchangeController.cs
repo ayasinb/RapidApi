@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using RapidApi.Models;
 
 namespace RapidApi.Controllers
 {
@@ -23,7 +24,7 @@ namespace RapidApi.Controllers
             {
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
-                var values=JsonConvert.DeserializeObject<>(body);
+                var values=JsonConvert.DeserializeObject<ExchangeViewModel>(body);
                 return View(values);
             }
             
