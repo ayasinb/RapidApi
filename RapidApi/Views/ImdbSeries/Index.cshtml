@@ -12,13 +12,16 @@
             <th>Puanı</th>
             <th>IMDB Linki</th>
         </tr>
+        
         @foreach(var item in Model)
         {
+            <tr>
             <td>@item.rank</td>
             <td>@item.title</td>
             <td>@item.rating</td>
-            <td><a href="@item.imdb_link" class="btn btn-primary" target="_blank"></a>IMDB Link</td>
+                <td><a href="@item.imdb_link" class="btn btn-primary" target="_blank">IMDB Link</a></td>
+            </tr>
         }
-
+       
     </table>
 </div>
