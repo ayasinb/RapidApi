@@ -1,0 +1,24 @@
+﻿@model List<ImdbSeriesViewModel>
+@{
+    Layout = null;
+}
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Film Adı</th>
+            <th>Puanı</th>
+            <th>IMDB Linki</th>
+        </tr>
+        @foreach(var item in Model)
+        {
+            <td>@item.rank</td>
+            <td>@item.title</td>
+            <td>@item.rating</td>
+            <td><a href="@item.imdb_link" class="btn btn-primary" target="_blank"></a>IMDB Link</td>
+        }
+
+    </table>
+</div>
